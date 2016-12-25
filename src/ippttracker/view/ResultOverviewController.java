@@ -80,7 +80,7 @@ public class ResultOverviewController {
                    .addListener((observable, oldValue, newValue) -> showResultDetails(newValue));
     }
     
-    //Called when teh user clicks on the delete button
+    //Called when the user clicks on the delete button
     @FXML
     private void handleDeleteResult() {
         int selectedIndex = resultTable.getSelectionModel().getSelectedIndex();
@@ -122,7 +122,7 @@ public class ResultOverviewController {
             } else {
                 isSFLabel.setText("NO");
             }
-            //ipptDateLabel.setText(DateUtil.format(result.getIPPTDate()));
+            ipptDateLabel.setText(DateUtil.format(result.getIPPTDate()));
             //ipptDateLabel.setText(result.getIPPTDate().toString());
         } else {
             //Result is null, remove all the text.

@@ -13,13 +13,13 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ippttracker.view.ResultOverviewController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="575.0" prefWidth="800.0" stylesheets="@DarkTheme.css" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ippttracker.view.ResultOverviewController">
    <children>
       <SplitPane dividerPositions="0.39849624060150374" layoutY="55.0" prefHeight="600.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                <children>
-                  <TableView fx:id="resultTable" layoutX="-32.0" layoutY="14.0" prefHeight="598.0" prefWidth="314.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <TableView fx:id="resultTable" layoutX="-32.0" layoutY="14.0" prefHeight="598.0" prefWidth="521.0" styleClass="label-bright" stylesheets="@DarkTheme.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <columns>
                       <TableColumn fx:id="firstNameColumn" prefWidth="75.0" text="FIRST NAME" />
                       <TableColumn fx:id="lastNameColumn" prefWidth="75.0" text="LAST NAME" />
@@ -33,10 +33,10 @@
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                <children>
-                  <GridPane layoutX="33.0" layoutY="47.0" prefHeight="447.0" prefWidth="410.0" AnchorPane.bottomAnchor="103.0" AnchorPane.leftAnchor="33.0" AnchorPane.rightAnchor="33.0" AnchorPane.topAnchor="47.0">
+                  <GridPane layoutX="33.0" layoutY="75.0" prefHeight="447.0" prefWidth="410.0" AnchorPane.bottomAnchor="75.0" AnchorPane.leftAnchor="33.0" AnchorPane.rightAnchor="33.0" AnchorPane.topAnchor="75.0">
                     <columnConstraints>
-                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="297.0" minWidth="10.0" prefWidth="217.0" />
-                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="201.0" minWidth="10.0" prefWidth="173.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="297.0" minWidth="10.0" prefWidth="230.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="201.0" minWidth="10.0" prefWidth="160.0" />
                     </columnConstraints>
                     <rowConstraints>
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -50,75 +50,75 @@
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="FIRST NAME">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 16; -fx-font-weight: 700;" text="FIRST NAME">
                            <GridPane.margin>
                               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                            </GridPane.margin></Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="LAST NAME" GridPane.rowIndex="1">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 16; -fx-font-weight: 700;" text="LAST NAME" GridPane.rowIndex="1">
                            <GridPane.margin>
                               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                            </GridPane.margin></Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="AGE" GridPane.rowIndex="2">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 16; -fx-font-weight: 700;" text="AGE" GridPane.rowIndex="2">
                            <GridPane.margin>
                               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                            </GridPane.margin></Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="PUSH-UPs SCORE" GridPane.rowIndex="3">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 16; -fx-font-weight: 700;" text="PUSH-UPs SCORE" GridPane.rowIndex="3">
                            <GridPane.margin>
                               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                            </GridPane.margin></Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="SIT-UPs SCORE" GridPane.rowIndex="4">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 16; -fx-font-weight: 700;" text="SIT-UPs SCORE" GridPane.rowIndex="4">
                            <GridPane.margin>
                               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                            </GridPane.margin></Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="RUNNING SCORE" GridPane.rowIndex="5">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 16; -fx-font-weight: 700;" text="RUNNING SCORE" GridPane.rowIndex="5">
                            <GridPane.margin>
                               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                            </GridPane.margin></Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="TOTAL SCORE" GridPane.rowIndex="6">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 16; -fx-font-weight: 700;" text="TOTAL SCORE" GridPane.rowIndex="6">
                            <GridPane.margin>
                               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                            </GridPane.margin></Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="IPPT TEST DATE" GridPane.rowIndex="8">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 16; -fx-font-weight: 700;" text="IPPT TEST DATE" GridPane.rowIndex="8">
                            <GridPane.margin>
                               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                            </GridPane.margin></Text>
-                        <Label fx:id="ageLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                        <Label fx:id="ageLabel" style="-fx-text-fill: black;" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2">
                            <GridPane.margin>
                               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                            </GridPane.margin></Label>
-                        <Label fx:id="firstNameLabel" text="Label" GridPane.columnIndex="1">
+                        <Label fx:id="firstNameLabel" style="-fx-text-fill: black;" text="Label" GridPane.columnIndex="1">
                            <GridPane.margin>
                               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                            </GridPane.margin></Label>
-                        <Label fx:id="lastNameLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                        <Label fx:id="lastNameLabel" style="-fx-text-fill: black;" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1">
                            <GridPane.margin>
                               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                            </GridPane.margin></Label>
-                        <Label fx:id="pushupLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                        <Label fx:id="pushupLabel" style="-fx-text-fill: black;" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3">
                            <GridPane.margin>
                               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                            </GridPane.margin></Label>
-                        <Label fx:id="situpLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                        <Label fx:id="situpLabel" style="-fx-text-fill: black;" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4">
                            <GridPane.margin>
                               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                            </GridPane.margin></Label>
-                        <Label fx:id="runningLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                        <Label fx:id="runningLabel" style="-fx-text-fill: black;" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="5">
                            <GridPane.margin>
                               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                            </GridPane.margin></Label>
-                        <Label fx:id="isSFLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                        <Label fx:id="isSFLabel" style="-fx-text-fill: black;" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="7">
                            <GridPane.margin>
                               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                            </GridPane.margin></Label>
-                        <Label fx:id="ipptDateLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="8">
+                        <Label fx:id="ipptDateLabel" style="-fx-text-fill: black;" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="8">
                            <GridPane.margin>
                               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                            </GridPane.margin></Label>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="COMMANDO/GUARDS/NDU" GridPane.rowIndex="7">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 16; -fx-font-weight: 700;" text="COMMANDO/GUARDS/NDU" GridPane.rowIndex="7">
                            <GridPane.margin>
                               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                            </GridPane.margin></Text>
-                        <Label fx:id="totalScoreLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                        <Label fx:id="totalScoreLabel" style="-fx-text-fill: black;" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="6">
                            <GridPane.margin>
                               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                            </GridPane.margin></Label>
@@ -127,12 +127,12 @@
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                      </padding>
                   </GridPane>
-                  <Text layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="IPPT Details:" />
-                  <ButtonBar layoutX="262.0" layoutY="544.0" prefHeight="40.0" prefWidth="200.0" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="20.0">
+                  <Text layoutX="14.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="label-header" text="IPPT Details:" />
+                  <ButtonBar layoutX="262.0" layoutY="544.0" prefHeight="40.0" prefWidth="360.0" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="20.0">
                     <buttons>
-                        <Button mnemonicParsing="false" onAction="#handleNewResult" text="New..." />
+                        <Button defaultButton="true" mnemonicParsing="false" onAction="#handleNewResult" text="New..." />
                         <Button mnemonicParsing="false" onAction="#handleEditResult" text="Edit..." />
-                      <Button mnemonicParsing="false" onAction="#handleDeleteResult" text="Delete" />
+                      <Button cancelButton="true" mnemonicParsing="false" onAction="#handleDeleteResult" text="Delete" />
                     </buttons>
                   </ButtonBar>
                </children>

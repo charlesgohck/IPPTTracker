@@ -1,7 +1,6 @@
 package ippttracker.view;
 
 import ippttracker.model.Result;
-import ippttracker.util.DateUtil;
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
@@ -44,9 +43,7 @@ public class ResultEditDialogController {
     private boolean doneClicked = false;
     
     @FXML
-    private void initialize(URL location, ResourceBundle resources) {
-        
-    }
+    private void initialize(URL location, ResourceBundle resources) { }
     
     //Sets the dialog box stage
     public void setDialogStage(Stage dialogStage) {
