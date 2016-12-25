@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="360.0" prefWidth="420.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ippttracker.view.ResultEditDialogController">
+   <children>
+      <GridPane layoutX="21.0" layoutY="17.0" prefHeight="294.0" prefWidth="385.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="203.7306365966797" minWidth="10.0" prefWidth="134.77210998535156" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="251.56922912597656" minWidth="10.0" prefWidth="250.22789001464844" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="FIRST NAME" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="LAST NAME" GridPane.rowIndex="1" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="PUSH-UP SCORE" GridPane.rowIndex="2" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="SIT-UP SCORE" GridPane.rowIndex="3" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="RUNNING SCORE" GridPane.rowIndex="4" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="TOTAL SCORE" GridPane.rowIndex="5" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="IPPT TEST DATE" GridPane.rowIndex="7" />
+            <CheckBox fx:id="isSFCheckBox" mnemonicParsing="false" onAction="#handleSFToggle" text="COMMANDO/GUARDS/NDU" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="AGE" GridPane.rowIndex="8" />
+            <TextField fx:id="firstNameField" GridPane.columnIndex="1" />
+            <TextField fx:id="lastNameField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <ChoiceBox fx:id="pushupChoiceBox" onContextMenuRequested="#refreshTotalScore" onMouseExited="#refreshTotalScore" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <ChoiceBox fx:id="situpChoiceBox" onContextMenuRequested="#refreshTotalScore" onMouseExited="#refreshTotalScore" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <ChoiceBox fx:id="runningChoiceBox" onContextMenuRequested="#refreshTotalScore" onMouseExited="#refreshTotalScore" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Label fx:id="totalScoreLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <ChoiceBox fx:id="ageChoiceBox" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+            <DatePicker fx:id="datepicker" onAction="#handleChangeDate" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+         </children>
+      </GridPane>
+      <ButtonBar layoutX="207.0" layoutY="313.0" prefHeight="40.0" prefWidth="200.0" AnchorPane.bottomAnchor="7.0" AnchorPane.rightAnchor="13.0">
+        <buttons>
+          <Button mnemonicParsing="false" onAction="#handleDone" text="Done" />
+            <Button mnemonicParsing="false" onAction="#handleCancel" text="Cancel" />
+        </buttons>
+      </ButtonBar>
+   </children>
+</AnchorPane>
