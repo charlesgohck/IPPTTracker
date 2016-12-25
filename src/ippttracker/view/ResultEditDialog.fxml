@@ -48,7 +48,7 @@
             <ChoiceBox fx:id="runningChoiceBox" onContextMenuRequested="#refreshTotalScore" onMouseExited="#refreshTotalScore" prefWidth="150.0" styleClass="cb" GridPane.columnIndex="1" GridPane.rowIndex="4" />
             <Label fx:id="totalScoreLabel" styleClass="label-dark" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="5" />
             <ChoiceBox fx:id="ageChoiceBox" prefWidth="150.0" styleClass="cb" GridPane.columnIndex="1" GridPane.rowIndex="8" />
-            <DatePicker id="datepicker" fx:id="datepicker" onAction="#handleChangeDate" showWeekNumbers="true" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+            <DatePicker id="datepicker" fx:id="datepicker" onAction="#handleChangeDate" GridPane.columnIndex="1" GridPane.rowIndex="7" />
          </children>
       </GridPane>
       <ButtonBar layoutX="207.0" layoutY="313.0" prefHeight="40.0" prefWidth="224.0" AnchorPane.bottomAnchor="7.0" AnchorPane.rightAnchor="13.0">

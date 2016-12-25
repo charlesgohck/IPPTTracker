@@ -79,7 +79,7 @@ and open the template in the editor.
 }
 
 .table-row-cell{
-    -fx-background-color: -fx-table-cell-border-color, darkslategrey 20%;
+    -fx-background-color: -fx-table-cell-border-color, derive(black, 30%);
     -fx-background-insets: 0, 0 0 1 0;
     -fx-padding: 0.0em; /* 0 */
 }
@@ -95,7 +95,7 @@ and open the template in the editor.
 }
 
 .table-view .column-header-background{
-    -fx-background-color: linear-gradient(lightgray 0%, black 50%);
+    -fx-background-color: derive(black, 20%);
 }
 
 .split-pane:horizontal > .split-pane-divider {
@@ -108,15 +108,21 @@ and open the template in the editor.
 }
 
 .menu-bar {
-    -fx-background-color: derive(#1d1d1d,20%);
+    -fx-background-color: derive(#1d1d1d,25%);
 }
 
 .context-menu {
-    -fx-background-color: darkgray;
+    -fx-background-color: derive(black, 30%);
+    -fx-text-fill: derive(black, 70%);
 }
 
 .cb .label {
-   -fx-text-fill: black;
+   -fx-text-fill: derive(darkgrey, 60%);
+   -fx-control-inner-background: derive(darkgrey, 40%);
+}
+
+.choice-box {
+    -fx-background-color: derive(black, 10%);
 }
 
 .menu-bar .label {
@@ -185,5 +191,5 @@ and open the template in the editor.
 }
 
 #datepicker {
-    
+    -fx-control-inner-background: derive(darkgrey, 50%);
 }
