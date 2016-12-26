@@ -1,21 +1,33 @@
 package ippttracker;
 
 
+import com.sun.javaws.Main;
 import ippttracker.model.Result;
+import ippttracker.model.ResultListWrapper;
 import ippttracker.view.ResultEditDialogController;
 import ippttracker.view.ResultOverviewController;
+import ippttracker.view.RootLayoutController;
+import java.io.File;
 import java.io.IOException;
 import java.time.LocalDate;
+import java.util.prefs.Preferences;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Marshaller;
+import javax.xml.bind.PropertyException;
+import javax.xml.bind.Unmarshaller;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -49,7 +61,7 @@ public class MainApp extends Application {
     private BorderPane rootLayout;
     
     @Override
-    public void start(Stage primaryStage) {
+    public void start(Stage primaryStage) throws JAXBException {
         this.primaryStage = primaryStage;
         this.primaryStage.setTitle("IPPT Tracker");
         
@@ -62,21 +74,33 @@ public class MainApp extends Application {
     }
     
     //Initializes root layout
-    public void initRootLayout() {
+   public void initRootLayout() throws JAXBException {
         try {
-            //Load root layout from fxml file.
+            // Load root layout from fxml file.
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(MainApp.class.getResource("view/RootLayout.fxml"));
+            loader.setLocation(MainApp.class
+                    .getResource("view/RootLayout.fxml"));
             rootLayout = (BorderPane) loader.load();
-            
-            //Show the scene containing the root layout
+
+            // Show the scene containing the root layout.
             Scene scene = new Scene(rootLayout);
             primaryStage.setScene(scene);
+
+            // Give the controller access to the main app.
+            RootLayoutController controller = loader.getController();
+            controller.setMainApp(this);
+
             primaryStage.show();
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+        // Try to load last opened person file.
+        File file = getResultFilePath();
+        if (file != null) {
+            loadResultDataFromFile(file);
     }
+}
     
     //Shows the ippt results overview inside the root layout.
     public void showResultOverview() {
@@ -131,6 +155,84 @@ public class MainApp extends Application {
         } catch (IOException e) {
             e.printStackTrace();
             return false;
+        }
+    }
+    
+    //Returns the file preference, i.e. the file that was last opened
+    public File getResultFilePath() {
+        Preferences prefs = Preferences.userNodeForPackage(MainApp.class);
+        String filePath = prefs.get("filePath", null);
+        if (filePath != null) {
+            return new File(filePath);
+        } else {
+            return null;
+        }
+    }
+    
+    //Sets the file path of the currently loaded file. 
+    public void setResultFilePath(File file) {
+        Preferences prefs = Preferences.userNodeForPackage(MainApp.class);
+        if (file != null) {
+            prefs.put("filePath", file.getPath());
+            
+            //Update the stage title
+            primaryStage.setTitle("AddressApp - " + file.getName());
+        } else {
+            prefs.remove("filePath");
+        }
+        
+        prefs.remove("filePath");
+        //Update the stage title
+        primaryStage.setTitle("IPPTTracker");
+    }
+    
+    public void loadResultDataFromFile(File file) throws JAXBException {
+        try {
+            JAXBContext context = JAXBContext
+                    .newInstance(ResultListWrapper.class);
+            Unmarshaller um = context.createUnmarshaller();
+            
+            // Reading XML from the file and unmarhsalling
+            ResultListWrapper wrapper = (ResultListWrapper) um.unmarshal(file);
+            
+            resultData.clear();
+            resultData.addAll(wrapper.getResults());
+            
+            //Save the file path to the registry
+            setResultFilePath(file);
+        } catch (JAXBException e) {
+            Alert alert = new Alert(AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Could not load data");
+            alert.setContentText("Could not load data from file:\n" + file.getPath());
+            
+            alert.showAndWait();
+        }
+    }
+    
+    //Saves the current result list of data to the specified file
+    public void saveResultDataToFile(File file) throws PropertyException {
+        try {
+            JAXBContext context = JAXBContext.newInstance(ResultListWrapper.class);
+            Marshaller m = context.createMarshaller();
+            m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+            
+            //Wrapping our result data
+            ResultListWrapper wrapper = new ResultListWrapper();
+            wrapper.setResults(resultData);
+            
+            //Marshalling and saving XML to the file
+            m.marshal(wrapper, file);
+            
+            //Save the file path to the registry
+            setResultFilePath(file);
+        } catch (JAXBException e) {
+            Alert alert = new Alert(AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Could not save data");
+            alert.setContentText("Could not save data to file:\n" + file.getPath());
+            
+            alert.showAndWait();
         }
     }
     
