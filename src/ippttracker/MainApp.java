@@ -38,11 +38,11 @@ public class MainApp extends Application {
     private ObservableList<Result> resultData;
     public MainApp() {
         this.resultData = FXCollections.observableArrayList();
-        resultData.add(new Result("Goh", "Charles", LocalDate.of(2012, 12, 25)));
-        resultData.add(new Result("Goh", "Charles", LocalDate.of(2013, 12, 12)));
-        resultData.add(new Result("Goh", "Charles", LocalDate.of(2016, 12, 3)));
-        resultData.add(new Result("Goh", "Charles", LocalDate.of(2014, 11, 11)));
-        resultData.add(new Result("Goh", "Charles", LocalDate.of(2015, 1, 10)));
+//        resultData.add(new Result("Goh", "Charles", LocalDate.of(2012, 12, 25)));
+//        resultData.add(new Result("Goh", "Charles", LocalDate.of(2013, 12, 12)));
+//        resultData.add(new Result("Goh", "Charles", LocalDate.of(2016, 12, 3)));
+//        resultData.add(new Result("Goh", "Charles", LocalDate.of(2014, 11, 11)));
+//        resultData.add(new Result("Goh", "Charles", LocalDate.of(2015, 1, 10)));
     }
     
     //Add some sample data
