@@ -1,11 +1,10 @@
 package ippttracker;
 
-
-import com.sun.javaws.Main;
 import ippttracker.model.Result;
 import ippttracker.model.ResultListWrapper;
 import ippttracker.view.ResultEditDialogController;
 import ippttracker.view.ResultOverviewController;
+import ippttracker.view.ResultsStatisticsController;
 import ippttracker.view.RootLayoutController;
 import java.io.File;
 import java.io.IOException;
@@ -29,12 +28,6 @@ import javax.xml.bind.Marshaller;
 import javax.xml.bind.PropertyException;
 import javax.xml.bind.Unmarshaller;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
  *
  * @author charlesgoh
@@ -47,9 +40,9 @@ public class MainApp extends Application {
         this.resultData = FXCollections.observableArrayList();
         resultData.add(new Result("Goh", "Charles", LocalDate.of(2012, 12, 25)));
         resultData.add(new Result("Goh", "Charles", LocalDate.of(2013, 12, 12)));
+        resultData.add(new Result("Goh", "Charles", LocalDate.of(2016, 12, 3)));
         resultData.add(new Result("Goh", "Charles", LocalDate.of(2014, 11, 11)));
         resultData.add(new Result("Goh", "Charles", LocalDate.of(2015, 1, 10)));
-        resultData.add(new Result("Goh", "Charles", LocalDate.of(2016, 12, 3)));
     }
     
     //Add some sample data
@@ -234,7 +227,30 @@ public class MainApp extends Application {
             
             alert.showAndWait();
         }
+        
     }
+    
+     public void showResultsStatistics() throws IOException {
+            try {
+                //Load the txml file and create . new stage for the popup
+                FXMLLoader loader = new FXMLLoader();
+                loader.setLocation(MainApp.class.getResource("view/ResultsStatistics.fxml"));
+                AnchorPane page = (AnchorPane) loader.load();
+                Stage dialogStage = new Stage();
+                dialogStage.setTitle("IPPT Statistics Chart");
+                dialogStage.initModality(Modality.WINDOW_MODAL);
+                dialogStage.initOwner(primaryStage);
+                Scene scene = new Scene(page);
+                dialogStage.setScene(scene);
+                //Set the persons into the controller
+                ResultsStatisticsController controller = loader.getController();
+                controller.setResultData(resultData);
+                
+                dialogStage.show();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
     
     public static void main(String[] args) {
         launch(args);

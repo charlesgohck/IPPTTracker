@@ -2,6 +2,7 @@ package ippttracker.view;
 
 import ippttracker.MainApp;
 import java.io.File;
+import java.io.IOException;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
@@ -85,6 +86,12 @@ public class RootLayoutController {
     @FXML
     private void handleExit() {
         System.exit(0);
+    }
+    
+    @FXML
+    private void handleShowStatistics() throws IOException {
+        System.out.println("System Message: Running handleShowStatistics()");
+        mainApp.showResultsStatistics();
     }
     
 }
