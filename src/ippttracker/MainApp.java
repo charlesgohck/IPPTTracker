@@ -59,7 +59,7 @@ public class MainApp extends Application {
         this.primaryStage.setTitle("IPPT Tracker");
         
         // Set the application icon
-        this.primaryStage.getIcons().add(new Image("file:resources/icons/testlogo.png"));
+        this.primaryStage.getIcons().add(new Image("file:resources/icons/IPPTTracker Logo v1.png"));
         
         initRootLayout();
         
@@ -135,7 +135,7 @@ public class MainApp extends Application {
             dialogStage.setScene(scene);
             
             //Set logo of dialog Stage
-            dialogStage.getIcons().add(new Image("file:resources/icons/testlogo.png"));
+            dialogStage.getIcons().add(new Image("file:resources/icons/IPPTTracker Logo v1.png"));
             
             //Set the person into the controller
             ResultEditDialogController controller = loader.getController();
@@ -242,6 +242,8 @@ public class MainApp extends Application {
                 dialogStage.initOwner(primaryStage);
                 Scene scene = new Scene(page);
                 dialogStage.setScene(scene);
+                dialogStage.getIcons().add(new Image("file:resources/icons/IPPTTracker Logo v1.png"));
+                
                 //Set the persons into the controller
                 ResultsStatisticsController controller = loader.getController();
                 controller.setResultData(resultData);
