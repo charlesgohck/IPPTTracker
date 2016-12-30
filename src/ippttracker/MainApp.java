@@ -9,6 +9,7 @@ import ippttracker.view.RootLayoutController;
 import ippttracker.view.SplashController;
 import java.io.File;
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.prefs.Preferences;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
@@ -39,7 +40,7 @@ public class MainApp extends Application {
     @SuppressWarnings("FieldMayBeFinal")
     private ObservableList<Result> resultData;
     public MainApp() {
-        this.resultData = FXCollections.observableArrayList();
+//        this.resultData = FXCollections.observableArrayList();
 //        resultData.add(new Result("Goh", "Charles", LocalDate.of(2012, 12, 25)));
 //        resultData.add(new Result("Goh", "Charles", LocalDate.of(2013, 12, 12)));
 //        resultData.add(new Result("Goh", "Charles", LocalDate.of(2016, 12, 3)));

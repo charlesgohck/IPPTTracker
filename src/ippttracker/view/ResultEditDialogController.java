@@ -73,6 +73,7 @@ public class ResultEditDialogController {
         System.out.println("datepicker initialized as " + datepicker.getValue());
         tempDate = result.getIPPTDate();
         System.out.println("tempDate initialized as: " + result.getIPPTDate().toString());
+        
 //        datepicker.setConverter(new StringConverter<LocalDate>() {
 //            DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern(pattern);
 //            
@@ -141,6 +142,9 @@ public class ResultEditDialogController {
             System.out.println("isSFCheckBox is " + isSFCheckBox.isSelected());
             
             System.out.println("tempDate is " + tempDate.toString());
+            
+            result.setIPPTDate(tempDate);
+            System.out.println("result.getIPPTDate() = " + result.getIPPTDate());
             //result.setIPPTDate(tempDate);
             doneClicked = true;
             dialogStage.close();

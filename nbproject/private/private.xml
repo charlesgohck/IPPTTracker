@@ -4,8 +4,8 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/Users/charlesgoh/Personal/Java%20Projects/IPPTTracker/src/ippttracker/view/ResultEditDialogController.java</file>
+            <file>file:/Users/charlesgoh/Personal/Java%20Projects/IPPTTracker/src/ippttracker/view/ResultOverviewController.java</file>
             <file>file:/Users/charlesgoh/Personal/Java%20Projects/IPPTTracker/src/ippttracker/MainApp.java</file>
-            <file>file:/Users/charlesgoh/Personal/Java%20Projects/IPPTTracker/src/ippttracker/view/SplashController.java</file>
             <file>file:/Users/charlesgoh/Personal/Java%20Projects/IPPTTracker/src/ippttracker/util/IPPTScoreCalculator.java</file>
         </group>
     </open-files>
