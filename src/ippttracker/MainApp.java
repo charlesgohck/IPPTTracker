@@ -6,7 +6,6 @@ import ippttracker.view.ResultEditDialogController;
 import ippttracker.view.ResultOverviewController;
 import ippttracker.view.ResultsStatisticsController;
 import ippttracker.view.RootLayoutController;
-import ippttracker.view.SplashController;
 import java.io.File;
 import java.io.IOException;
 import java.time.LocalDate;
@@ -21,10 +20,8 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.StackPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
@@ -40,7 +37,7 @@ public class MainApp extends Application {
     @SuppressWarnings("FieldMayBeFinal")
     private ObservableList<Result> resultData;
     public MainApp() {
-//        this.resultData = FXCollections.observableArrayList();
+        this.resultData = FXCollections.observableArrayList();
 //        resultData.add(new Result("Goh", "Charles", LocalDate.of(2012, 12, 25)));
 //        resultData.add(new Result("Goh", "Charles", LocalDate.of(2013, 12, 12)));
 //        resultData.add(new Result("Goh", "Charles", LocalDate.of(2016, 12, 3)));
@@ -58,52 +55,19 @@ public class MainApp extends Application {
     
     @Override
     public void start(Stage primaryStage) throws JAXBException {
-        
         this.primaryStage = primaryStage;
         this.primaryStage.setTitle("IPPT Tracker");
         
         // Set the application icon
-        this.primaryStage.getIcons().add(new Image("file:resources/graphics/Logo/IPPTTracker Logo v1.png"));
+        this.primaryStage.getIcons().add(new Image("file:resources/icons/testlogo.png"));
         
-        //initSplashScreen();
         initRootLayout();
         
         showResultOverview();
     }
     
-//    public void initSplashScreen() {
-//        try {
-//            //Load the fxml file and create a new stage for the popup dialog
-//            FXMLLoader loader = new FXMLLoader();
-//            loader.setLocation(MainApp.class.getResource("view/Splash.fxml"));
-//            StackPane page = (StackPane) loader.load();
-//            
-//            //Create the dialog Stage
-//            Stage splashStage = new Stage();
-//            splashStage.setTitle("Splash Screen for IPPT Tracker");
-//            //splashStage.initModality(Modality.WINDOW_MODAL);
-//            splashStage.initStyle(StageStyle.UNDECORATED);
-//            splashStage.initOwner(splashStage);
-//            Scene scene = new Scene(page);
-//            splashStage.setScene(scene);
-//            
-//            //Set logo of dialog Stage
-//            splashStage.getIcons().add(new Image("file:resources/graphics/Logo/IPPTTracker Logo v1.png"));
-//            
-//            //Set the person into the controller
-//            SplashController controller = loader.getController();
-//            controller.setSplashStage(splashStage);
-//            controller.executeTransition();
-//            
-//            //Show the dialog and wait until the user closes it
-//            splashStage.showAndWait();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//    }
-    
     //Initializes root layout
-    public void initRootLayout() throws JAXBException {
+   public void initRootLayout() throws JAXBException {
         try {
             // Load root layout from fxml file.
             FXMLLoader loader = new FXMLLoader();
@@ -171,7 +135,7 @@ public class MainApp extends Application {
             dialogStage.setScene(scene);
             
             //Set logo of dialog Stage
-            dialogStage.getIcons().add(new Image("file:resources/graphics/Logo/IPPTTracker Logo v1.png"));
+            dialogStage.getIcons().add(new Image("file:resources/icons/testlogo.png"));
             
             //Set the person into the controller
             ResultEditDialogController controller = loader.getController();
@@ -278,8 +242,6 @@ public class MainApp extends Application {
                 dialogStage.initOwner(primaryStage);
                 Scene scene = new Scene(page);
                 dialogStage.setScene(scene);
-                dialogStage.getIcons().add(new Image("file:resources/graphics/Logo/IPPTTracker Logo v1.png"));
-                
                 //Set the persons into the controller
                 ResultsStatisticsController controller = loader.getController();
                 controller.setResultData(resultData);
