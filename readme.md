@@ -5,7 +5,7 @@ This is my first application. It was created using JavaFX. I created it with the
 I just realised that the application became super buggy after I tried adding more warning dialog boxes and the splash screen so I am rolling back as far back as I can so I can save some of the basic functionality and my sanity :(. Looks like I will need to go slower and test everything thoroughly.
 
 ## How to Run
-Download/Clone the repo. Then go into the dist folder and run the IPPTTracker.jar. It works by making you save an xml file with your result details. You can open a different xml file as well, as long as the format is the same. I have also provided a sample xml file in the resources/sample/ folder.
+Download/Clone the repo. Then go into the dist folder and run the IPPTTracker.jar. It works by making you save an xml file with your result details. You can open a different xml file as well, as long as the format is the same. I have also provided a sample xml file in the resources/sample/ folder. You may have to go to Security and Privacy to run it on a mac because it is an unidentified program.
 
 ## Possible Features to Add
 These are some of the following things that I may or may not work on in the near future, depending on how much time I have on my hands :P
@@ -25,9 +25,9 @@ I suppose doing a desktop application for this is a bit odd... IPPT Trackers are
 For my logo and my splash screen (even though I did not use it yet), I used the following Icons:
 
 Icons Used for IPPTTracker Logo v1:
-Running by Abraham from the Noun Project
-Radio Empty by Adam Robinson from the Noun Project
+- Running by Abraham from the Noun Project
+- Radio Empty by Adam Robinson from the Noun Project
 
 Icons Used for IPPTracker SplashScreen:
-Running by Abraham from the Noun Project
-Radio Empty by Adam Robinson from the Noun Project
+- Running by Abraham from the Noun Project
+- Radio Empty by Adam Robinson from the Noun Project
