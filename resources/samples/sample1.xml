@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<results>
+    <result>
+        <age>21</age>
+        <firstName>Charles</firstName>
+        <IPPTDate>2016-12-03</IPPTDate>
+        <isSF>false</isSF>
+        <lastName>Goh</lastName>
+        <pushup>24</pushup>
+        <running>46</running>
+        <situp>24</situp>
+        <totalScore>94</totalScore>
+    </result>
+</results>

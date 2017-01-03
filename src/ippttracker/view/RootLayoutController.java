@@ -61,15 +61,21 @@ public class RootLayoutController {
         
         //Show open file dialog
         File file = fileChooser.showOpenDialog(mainApp.getPrimaryStage());
-        
+        System.out.print("File is null at handleOen()");
+        System.out.println(file == null);
         if (file != null) {
             mainApp.loadResultDataFromFile(file);
+            mainApp.setResultFilePath(file);
         }
+        System.out.print("resultFile @ handleOpen() is ");
+        System.out.println(mainApp.getResultFilePath() == null);
     }
     
     @FXML 
     void handleSave() throws PropertyException {
         File resultFile = mainApp.getResultFilePath();
+        System.out.println("resultFile is null = ");
+        System.out.println(resultFile == null);
         if (resultFile != null) {
             mainApp.saveResultDataToFile(resultFile);
         } else {

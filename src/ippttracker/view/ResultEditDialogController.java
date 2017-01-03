@@ -141,7 +141,7 @@ public class ResultEditDialogController {
             System.out.println("isSFCheckBox is " + isSFCheckBox.isSelected());
             
             System.out.println("tempDate is " + tempDate.toString());
-            //result.setIPPTDate(tempDate);
+            result.setIPPTDate(tempDate);
             doneClicked = true;
             dialogStage.close();
         }

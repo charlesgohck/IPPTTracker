@@ -8,7 +8,6 @@ import ippttracker.view.ResultsStatisticsController;
 import ippttracker.view.RootLayoutController;
 import java.io.File;
 import java.io.IOException;
-import java.time.LocalDate;
 import java.util.prefs.Preferences;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
@@ -59,7 +58,7 @@ public class MainApp extends Application {
         this.primaryStage.setTitle("IPPT Tracker");
         
         // Set the application icon
-        this.primaryStage.getIcons().add(new Image("file:resources/icons/testlogo.png"));
+        this.primaryStage.getIcons().add(new Image("file:resources/graphics/logo/IPPTTracker Logo v1.png"));
         
         initRootLayout();
         
@@ -135,7 +134,7 @@ public class MainApp extends Application {
             dialogStage.setScene(scene);
             
             //Set logo of dialog Stage
-            dialogStage.getIcons().add(new Image("file:resources/icons/testlogo.png"));
+            dialogStage.getIcons().add(new Image("file:resources/graphics/logo/IPPTTracker Logo v1.png"));
             
             //Set the person into the controller
             ResultEditDialogController controller = loader.getController();
@@ -169,14 +168,13 @@ public class MainApp extends Application {
             prefs.put("filePath", file.getPath());
             
             //Update the stage title
-            primaryStage.setTitle("AddressApp - " + file.getName());
+            primaryStage.setTitle("IPPTTracker - " + file.getName());
         } else {
             prefs.remove("filePath");
+            prefs.remove("filePath");
+            //Update the stage title
+            primaryStage.setTitle("IPPTTracker");
         }
-        
-        prefs.remove("filePath");
-        //Update the stage title
-        primaryStage.setTitle("IPPTTracker");
     }
     
     public void loadResultDataFromFile(File file) throws JAXBException {
@@ -240,6 +238,7 @@ public class MainApp extends Application {
                 dialogStage.setTitle("IPPT Statistics Chart");
                 dialogStage.initModality(Modality.WINDOW_MODAL);
                 dialogStage.initOwner(primaryStage);
+                dialogStage.getIcons().add(new Image("file:resources/graphics/logo/IPPTTracker Logo v1.png"));
                 Scene scene = new Scene(page);
                 dialogStage.setScene(scene);
                 //Set the persons into the controller
