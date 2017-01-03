@@ -2,7 +2,7 @@
 This is my first application. It was created using JavaFX. I created it with the help of an online tutorial: http://code.makery.ch/library/javafx-8-tutorial/. The DarkThemes.css was taken from the tutorial and edited lightly.
 
 ## BUGS...
-I just realised that the application became super buggy after I tried adding more warning dialog boxes and the splash screen so I am rolling back as far back as I can so I can save some of the basic functionality and my sanity :(. Looks like I will need to go slower and test everything thoroughly.
+After adding a bunch of extra features, I had to roll back due to the huge number of bugs I encountered. I've fixed most of the bugs affecting the core functionality of the application.
 
 ## How to Run
 Download/Clone the repo. Then go into the dist folder and run the IPPTTracker.jar. It works by making you save an xml file with your result details. You can open a different xml file as well, as long as the format is the same. I have also provided a sample xml file in the resources/sample/ folder. You may have to go to Security and Privacy to run it on a mac because it is an unidentified program.
